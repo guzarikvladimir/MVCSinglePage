@@ -46,10 +46,8 @@ C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\obj\Debug\WebApi.dll
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\obj\Debug\WebApi.pdb
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\Core.Contract.dll
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\Core.Contract.pdb
-C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\Core.dll
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\Repository.dll
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\EntityFramework.dll
-C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\Core.pdb
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\Repository.pdb
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\EntityFramework.xml
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\EntityFramework.SqlServer.dll
@@ -68,3 +66,5 @@ C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\Shared.dll
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\Shared.pdb
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\AutoMapper.dll
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\AutoMapper.xml
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\Core.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\WebApi\bin\Core.pdb

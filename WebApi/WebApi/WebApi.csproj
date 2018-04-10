@@ -209,11 +209,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core.Contract\Core.Contract.csproj">
-      <Project>{fe9e4b55-4484-41f0-9235-87c70c50c415}</Project>
+      <Project>{9AF351E2-C208-4209-AD60-333E3543B63F}</Project>
       <Name>Core.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{6462DB2B-E3CA-497D-A1FB-01135AE7D59B}</Project>
+      <Project>{86188405-f92e-4aa5-ac45-2b526afccb0b}</Project>
       <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Repository\Repository.csproj">

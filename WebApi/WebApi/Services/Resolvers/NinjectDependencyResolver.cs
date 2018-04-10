@@ -31,6 +31,7 @@ namespace WebApi.Services.Resolvers
 
         private void AddBindings()
         {
+            // For best performnce recommended to name custom services with specific symbols, for example CS.
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             Mapper.Initialize(cfg =>
             {
@@ -48,7 +49,6 @@ namespace WebApi.Services.Resolvers
                     }
                 }
             });
-            
         }
     }
 }

@@ -4,14 +4,13 @@ using Core.Contract.Models;
 using Ninject;
 using Repository;
 using Shared.Contract;
-using Shared.Services;
 
 namespace Core.Services
 {
     public class ImageRetrievingService : IImageRetrievingService
     {
         [Inject]
-        public IEntityMapper<Image, ImageView> ImageMappper { get; set; }
+        public IEntityMapper<Image, ImageView> ImageMapper { get; set; }
 
         public IEnumerable<ImageView> Get()
         {
@@ -19,7 +18,7 @@ namespace Core.Services
             {
                 foreach (Image image in db.Images)
                 {
-                    yield return ImageMappper.Map(image);
+                    yield return ImageMapper.Map(image);
                 }
             }
         }
