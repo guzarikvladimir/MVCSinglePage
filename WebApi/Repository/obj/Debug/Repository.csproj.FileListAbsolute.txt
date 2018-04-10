@@ -1,0 +1,12 @@
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\Repository.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\Repository.pdb
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\obj\Debug\Repository.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\obj\Debug\Repository.pdb
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\Repository.dll.config
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\EntityFramework.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\EntityFramework.xml
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\AutoMapper.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\AutoMapper.xml

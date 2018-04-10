@@ -1,0 +1,10 @@
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Shared.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Shared.pdb
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Ninject.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Ninject.pdb
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Ninject.xml
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\obj\Debug\Shared.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\obj\Debug\Shared.pdb
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\AutoMapper.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\AutoMapper.xml
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\obj\Debug\Shared.csprojResolveAssemblyReference.cache

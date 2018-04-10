@@ -1,7 +1,14 @@
-﻿
+﻿@using Core.Contract.Models
+@model IEnumerable<ImageView>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
-
+<ul>
+    @foreach (ImageView image in Model)
+    {
+        <li>@image.Name</li>
+    }
+</ul>

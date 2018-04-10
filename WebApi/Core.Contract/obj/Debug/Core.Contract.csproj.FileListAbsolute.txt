@@ -1,0 +1,7 @@
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Core.Contract\bin\Debug\Core.Contract.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Core.Contract\bin\Debug\Core.Contract.pdb
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Core.Contract\obj\Debug\Core.Contract.csprojResolveAssemblyReference.cache
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Core.Contract\obj\Debug\Core.Contract.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Core.Contract\obj\Debug\Core.Contract.pdb
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Core.Contract\bin\Debug\AutoMapper.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Core.Contract\bin\Debug\AutoMapper.xml
