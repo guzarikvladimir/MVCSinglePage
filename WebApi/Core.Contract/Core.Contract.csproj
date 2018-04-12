@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract\IImageModifyingService.cs" />
     <Compile Include="Contract\IImageRetrievingService.cs" />
+    <Compile Include="Models\ExifView.cs" />
     <Compile Include="Models\ImageView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -5,7 +5,7 @@ using Core.Mappers;
 using Core.Services;
 using Ninject;
 using Ninject.Web.Common;
-using Repository;
+using Repository.Models;
 using Shared.Contract;
 using Shared.Services;
 
@@ -16,7 +16,10 @@ namespace Core
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IImageRetrievingService>().To<ImageRetrievingService>().InRequestScope();
-            kernel.Bind<IEntityMapper<Image, ImageView>>().To<ImageMapper>().InRequestScope();
+            kernel.Bind<IEntityMapper<Image, ImageView>, IEntityMapper<ImageView, Image>>()
+                .To<ImageMapper>()
+                .InRequestScope();
+            kernel.Bind<IImageModifyingService>().To<ImageModifyingService>().InRequestScope();
         }
 
         public override void RegisterMappers(IMapperConfigurationExpression config)

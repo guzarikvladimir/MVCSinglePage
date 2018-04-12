@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Repository;
+using Repository.Models;
+using Repository.Services;
 
 namespace WebApi
 {
@@ -13,6 +15,12 @@ namespace WebApi
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //DbInit();
+            SetLibraryPath();
+        }
+
+        private void SetLibraryPath()
+        {
+            WebConfigurationManager.AppSettings["libraryPath"] = Server.MapPath("ImagesLibrary");
         }
 
         private void DbInit()
@@ -27,12 +35,12 @@ namespace WebApi
                     new Image()
                     {
                         Id = Guid.NewGuid(),
-                        Name = "Image1"
+                        Name = "Image1.jpg"
                     },
                     new Image()
                     {
                         Id = Guid.NewGuid(),
-                        Name = "Image2"
+                        Name = "Image2.jpg"
                     }
                 };
 

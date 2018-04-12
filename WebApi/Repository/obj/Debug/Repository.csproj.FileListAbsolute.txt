@@ -10,3 +10,6 @@ C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\EntityFramewor
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\AutoMapper.dll
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\bin\Debug\AutoMapper.xml
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\obj\Debug\Repository.Migrations.AddCreatedDateToImageMigration.resources
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\obj\Debug\Repository.csproj.GenerateResource.Cache
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Repository\obj\Debug\Repository.Migrations.MakeCreatedDateNullable.resources

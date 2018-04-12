@@ -1,6 +1,5 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding: 10px 30px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -16,3 +15,43 @@ textarea {
     max-width: 280px;
 }
 
+/* Preview */
+
+.list {
+    Height: 230px;
+    vertical-align: middle;
+    border: 1px solid black;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space:nowrap;
+}
+
+.list img {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+}
+
+.selected {
+    border: 1px solid black;
+}
+
+/* view */
+.content {
+    height: 100%;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    border-top: 3px dotted gainsboro;
+    width: 100%;
+}
+
+.footer input {
+    float: left;
+    margin: 5px;
+}

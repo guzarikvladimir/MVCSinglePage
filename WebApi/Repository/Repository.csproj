@@ -54,13 +54,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationContext.cs" />
-    <Compile Include="Image.cs" />
+    <Compile Include="Migrations\201804121544580_AddCreatedDateToImageMigration.cs" />
+    <Compile Include="Migrations\201804121544580_AddCreatedDateToImageMigration.Designer.cs">
+      <DependentUpon>201804121544580_AddCreatedDateToImageMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804121558284_MakeCreatedDateNullable.cs" />
+    <Compile Include="Migrations\201804121558284_MakeCreatedDateNullable.Designer.cs">
+      <DependentUpon>201804121558284_MakeCreatedDateNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Services\ApplicationContext.cs" />
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804121544580_AddCreatedDateToImageMigration.resx">
+      <DependentUpon>201804121544580_AddCreatedDateToImageMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804121558284_MakeCreatedDateNullable.resx">
+      <DependentUpon>201804121558284_MakeCreatedDateNullable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

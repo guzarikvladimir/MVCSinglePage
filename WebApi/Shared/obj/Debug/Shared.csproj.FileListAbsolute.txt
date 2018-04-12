@@ -8,3 +8,15 @@ C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\obj\Debug\Shared.pdb
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\AutoMapper.dll
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\AutoMapper.xml
 C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\obj\Debug\Shared.csprojResolveAssemblyReference.cache
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Shared.dll.config
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\EntityFramework.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Ninject.Web.Common.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Repository.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\WebActivator.dll
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Repository.pdb
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\EntityFramework.xml
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Ninject.Web.Common.pdb
+C:\Users\Sacris\Desktop\MVCSinglePage\WebApi\Shared\bin\Debug\Ninject.Web.Common.xml

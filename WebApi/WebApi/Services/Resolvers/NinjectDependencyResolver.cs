@@ -37,7 +37,8 @@ namespace WebApi.Services.Resolvers
             {
                 foreach (Assembly assembly in assemblies)
                 {
-                    IEnumerable<Type> moduleTypes = assembly.GetTypes().Where(t => !t.IsAbstract && t.IsSubclassOf(typeof(Module)));
+                    IEnumerable<Type> moduleTypes = assembly.GetTypes()
+                        .Where(t => !t.IsAbstract && t.IsSubclassOf(typeof(Module)));
                     foreach (Type moduleType in moduleTypes)
                     {
                         Module module = Activator.CreateInstance(moduleType) as Module;

@@ -5,10 +5,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-<ul>
-    @foreach (ImageView image in Model)
-    {
-        <li>@image.Name</li>
-    }
-</ul>
+<div id="list" class="list">
+    <!-- ko foreach: model.images -->
+    <img data-bind="attr: { src: Url }, click: $root.highlightImageHandler "/>
+    <!-- /ko -->
+</div>
+<div class="content">
+
+</div>
+<div class="footer">
+    <input type="file" id="fileUpload" />
+    <input type="button" id="btnUpload" value="Upload and preview" />
+</div>
