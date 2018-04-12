@@ -20,6 +20,7 @@ namespace Core
                 .To<ImageMapper>()
                 .InRequestScope();
             kernel.Bind<IImageModifyingService>().To<ImageModifyingService>().InRequestScope();
+            kernel.Bind<IImageUpdatingMapper>().To<ImageUpdatingMapper>().InRequestScope();
         }
 
         public override void RegisterMappers(IMapperConfigurationExpression config)

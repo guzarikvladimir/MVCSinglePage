@@ -38,13 +38,28 @@ textarea {
     border: 1px solid black;
 }
 
-/* view */
 .content {
     height: 100%;
+    padding: 20px 0;
+}
+
+.content img {
+    width: 50%;
+    border: 1px solid black;
+    margin: 0 5px 20px 0;
+}
+
+.imageInfo {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+}
+
+.descriptionText {
+    color: darkgray;
 }
 
 .footer {
-    position: fixed;
     bottom: 0;
     height: 40px;
     border-top: 3px dotted gainsboro;

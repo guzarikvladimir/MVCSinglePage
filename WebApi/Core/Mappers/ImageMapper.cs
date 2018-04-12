@@ -23,23 +23,32 @@ namespace Core.Mappers
         {
             ImageView imageView = Mapper.Map<ImageView>(model);
             imageView.Url = Path.Combine(@"\ImagesLibrary", imageView.Name);
-            //imageView.Exif = GetExifData(imageView);
+            imageView.Exif = GetExifData(imageView);
 
             return imageView;
         }
 
         private ExifView GetExifData(ImageView imageView)
         {
-            string libraryPath = WebConfigurationManager.AppSettings["libraryPath"];
-            Image image = new Bitmap(Path.Combine(libraryPath, imageView.Name));
+            //string libraryPath = WebConfigurationManager.AppSettings["libraryPath"];
+            //Image image = new Bitmap(Path.Combine(libraryPath, imageView.Name));
+
+            //return new ExifView()
+            //{
+            //    Model = Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0110", 16)).Value),
+            //    DataAndTime = DateTime.Parse(Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0132", 16)).Value)),
+            //    Compression = Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0103", 16)).Value),
+            //    ExposureTime = TimeSpan.Parse(Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x9000", 16)).Value)),
+            //    ExifVersion = double.Parse(Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0132", 16)).Value))
+            //};
 
             return new ExifView()
             {
-                Model = Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0110", 16)).Value),
-                DataAndTime = DateTime.Parse(Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0132", 16)).Value)),
-                Compression = Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0103", 16)).Value),
-                ExposureTime = TimeSpan.Parse(Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x9000", 16)).Value)),
-                ExifVersion = double.Parse(Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0132", 16)).Value))
+                Model = "QV-400",
+                DataAndTime = DateTime.Now,
+                Compression = "JPEG",
+                ExposureTime = TimeSpan.MaxValue,
+                ExifVersion = 2.1
             };
         }
 
@@ -48,9 +57,8 @@ namespace Core.Mappers
             if (!model.Id.HasValue)
             {
                 model.Id = Guid.NewGuid();
+                model.CreatedDate = DateTime.Now;
             }
-
-            model.CreatedDate = DateTime.Now;
 
             return Mapper.Map<ImageEntity>(model);
         }

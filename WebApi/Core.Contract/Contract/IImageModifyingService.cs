@@ -5,5 +5,7 @@ namespace Core.Contract.Contract
     public interface IImageModifyingService
     {
         void Add(ImageView image);
+
+        void Update(ImageView image);
     }
 }

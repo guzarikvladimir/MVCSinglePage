@@ -42,9 +42,16 @@
   <ItemGroup>
     <Compile Include="Contract\IImageModifyingService.cs" />
     <Compile Include="Contract\IImageRetrievingService.cs" />
+    <Compile Include="Contract\IImageUpdatingMapper.cs" />
     <Compile Include="Models\ExifView.cs" />
     <Compile Include="Models\ImageView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{F3130CB9-1C6E-4FCA-82FB-B2022AF8B512}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

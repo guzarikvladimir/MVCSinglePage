@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
-using System.Web.Helpers;
 using System.Web.Mvc;
 using Core.Contract.Contract;
 using Core.Contract.Models;
@@ -23,11 +22,13 @@ namespace WebApi.Controllers
 
         #endregion
 
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
+        [HttpPost]
         public EmptyResult Upload()
         {
             HttpPostedFileBase file = Request.Files[0];
@@ -39,6 +40,7 @@ namespace WebApi.Controllers
             return new EmptyResult();
         }
 
+        [HttpGet]
         public JsonResult Get()
         {
             List<ImageView> images = ImageRetrievingService.Get()
@@ -46,6 +48,14 @@ namespace WebApi.Controllers
                 .ToList();
 
             return Json(images, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public EmptyResult UpdateImage(ImageView image)
+        {
+            ImageModifyingService.Update(image);
+
+            return new EmptyResult();
         }
     }
 }
