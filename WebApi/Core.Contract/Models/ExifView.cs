@@ -8,11 +8,11 @@ namespace Core.Contract.Models
 
         public string Model { get; set; }
 
-        public DateTime? DataAndTime { get; set; }
+        public DateTime? DateAndTime { get; set; }
 
         public string Compression { get; set; }
 
-        public TimeSpan ExposureTime { get; set; }
+        public double? ExposureTime { get; set; }
 
         public double? ExifVersion { get; set; }
     }

@@ -6,14 +6,14 @@ using Shared.Services;
 
 namespace Shared
 {
-    public class SharedModule : Module
+    public class SharedModule : IModule
     {
-        public override void RegisterServices(IKernel kernel)
+        public void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IDbFactory>().To<DbFactory>().InRequestScope();
         }
 
-        public override void RegisterMappers(IMapperConfigurationExpression config)
+        public void RegisterMappers(IMapperConfigurationExpression config)
         {
         }
     }

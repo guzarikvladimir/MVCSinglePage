@@ -28,8 +28,10 @@ namespace WebApi.Controllers
             return View();
         }
 
+        // Business logic requires getting all images after all uploads,
+        // So we return images at once not to request server again
         [HttpPost]
-        public EmptyResult Upload()
+        public JsonResult Upload()
         {
             HttpPostedFileBase file = Request.Files[0];
             string fileName = file.FileName;
@@ -37,17 +39,13 @@ namespace WebApi.Controllers
             file.SaveAs(Path.Combine(libraryPath, fileName));
             ImageModifyingService.Add(new ImageView(fileName));
 
-            return new EmptyResult();
+            return Json(GetImages(), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public JsonResult Get()
         {
-            List<ImageView> images = ImageRetrievingService.Get()
-                .OrderByDescending(i => i.CreatedDate)
-                .ToList();
-
-            return Json(images, JsonRequestBehavior.AllowGet);
+            return Json(GetImages(), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -56,6 +54,15 @@ namespace WebApi.Controllers
             ImageModifyingService.Update(image);
 
             return new EmptyResult();
+        }
+
+        private List<ImageView> GetImages()
+        {
+            List<ImageView> images = ImageRetrievingService.Get()
+                .OrderByDescending(i => i.CreatedDate)
+                .ToList();
+
+            return images;
         }
     }
 }

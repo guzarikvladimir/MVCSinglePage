@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Web.Mvc;
 using AutoMapper;
 using Ninject;
-using Module = Shared.Services.Module;
+using Shared.Services;
 
 namespace WebApi.Services.Resolvers
 {
@@ -38,10 +38,10 @@ namespace WebApi.Services.Resolvers
                 foreach (Assembly assembly in assemblies)
                 {
                     IEnumerable<Type> moduleTypes = assembly.GetTypes()
-                        .Where(t => !t.IsAbstract && t.IsSubclassOf(typeof(Module)));
+                        .Where(t => !t.IsAbstract && t.GetInterface("IModule") != null);
                     foreach (Type moduleType in moduleTypes)
                     {
-                        Module module = Activator.CreateInstance(moduleType) as Module;
+                        IModule module = Activator.CreateInstance(moduleType) as IModule;
                         if (module != null)
                         {
                             module.RegisterServices(kernel);

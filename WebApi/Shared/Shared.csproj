@@ -74,12 +74,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Contract\IEntityMapper.cs" />
     <Compile Include="Services\DbFactory.cs" />
-    <Compile Include="Services\Module.cs" />
+    <Compile Include="Services\IModule.cs" />
     <Compile Include="SharedModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Repository\Repository.csproj">

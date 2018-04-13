@@ -1,22 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using AutoMapper;
 using Core.Contract.Models;
 using Shared.Contract;
 using ImageEntity = Repository.Models.Image;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Linq;
 using System.Text;
 using System.Web.Configuration;
+using System.Web.Mvc;
+using Core.Contract.Contract;
 
 namespace Core.Mappers
 {
-    public class ImageMapper : IEntityMapper<ImageEntity, ImageView>,
-        IEntityMapper<ImageView, ImageEntity>
+    public class ImageMapper : IEntityMapper<ImageEntity, ImageView>
     {
+        static readonly Dictionary<string, string> exifProperties = new Dictionary<string, string>()
+        {
+            { "Model", "0x0110" },
+            { "DateAndTime", "0x0132" },
+            { "Compression", "0x0103" },
+            { "ExposureTime", "0x829A" },
+            { "ExifVersion", "0x9000" }
+        };
+
         public static void Register(IMapperConfigurationExpression config)
         {
             config.CreateMap<ImageEntity, ImageView>();
-            config.CreateMap<ImageView, ImageEntity>();
         }
 
         public ImageView Map(ImageEntity model)
@@ -30,37 +42,40 @@ namespace Core.Mappers
 
         private ExifView GetExifData(ImageView imageView)
         {
-            //string libraryPath = WebConfigurationManager.AppSettings["libraryPath"];
-            //Image image = new Bitmap(Path.Combine(libraryPath, imageView.Name));
+            string libraryPath = WebConfigurationManager.AppSettings["libraryPath"];
+            Image image = new Bitmap(Path.Combine(libraryPath, imageView.Name));
+            Dictionary<int, PropertyItem> propertyItems = image.PropertyItems.ToDictionary(p => p.Id);
 
-            //return new ExifView()
-            //{
-            //    Model = Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0110", 16)).Value),
-            //    DataAndTime = DateTime.Parse(Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0132", 16)).Value)),
-            //    Compression = Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0103", 16)).Value),
-            //    ExposureTime = TimeSpan.Parse(Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x9000", 16)).Value)),
-            //    ExifVersion = double.Parse(Encoding.Default.GetString(image.GetPropertyItem(Convert.ToInt32("0x0132", 16)).Value))
-            //};
-
-            return new ExifView()
+            return IsEmptyExif(image) ? null : new ExifView()
             {
-                Model = "QV-400",
-                DataAndTime = DateTime.Now,
-                Compression = "JPEG",
-                ExposureTime = TimeSpan.MaxValue,
-                ExifVersion = 2.1
+                Model = GetProperty<string>(exifProperties["Model"], propertyItems),
+                DateAndTime = GetProperty<DateTime?>(exifProperties["DateAndTime"], propertyItems),
+                Compression = GetProperty<string>(exifProperties["Compression"], propertyItems), // PropertyTagTypeShort idk how it's parsed
+                //ExposureTime = GetProperty<double?>(exifProperties["ExposureTime"], propertyItems), // PropertyTagTypeRational
+                ExifVersion = GetProperty<double?>(exifProperties["ExifVersion"], propertyItems)
             };
         }
 
-        public ImageEntity Map(ImageView model)
+        private T GetProperty<T>(string tag, Dictionary<int, PropertyItem> propertyItems, 
+            Func<byte[], string> encoder = null)
         {
-            if (!model.Id.HasValue)
+            int propid = Convert.ToInt32(tag, 16);
+            PropertyItem property;
+            if (!propertyItems.TryGetValue(propid, out property))
             {
-                model.Id = Guid.NewGuid();
-                model.CreatedDate = DateTime.Now;
+                return default(T);
             }
 
-            return Mapper.Map<ImageEntity>(model);
+            string encodedValue = encoder == null 
+                ? Encoding.ASCII.GetString(property.Value) 
+                : encoder(property.Value);
+            
+            return DependencyResolver.Current.GetService<IEncodedValueParserService<T>>().Get(encodedValue);
+        }
+
+        private bool IsEmptyExif(Image image)
+        {
+            return !exifProperties.Values.Any(ep => image.PropertyIdList.Contains(Convert.ToInt32(ep, 16)));
         }
     }
 }

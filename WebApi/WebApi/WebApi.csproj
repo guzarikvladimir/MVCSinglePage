@@ -167,6 +167,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\events.js" />
     <Content Include="scripts\jquery-1.9.1.js" />

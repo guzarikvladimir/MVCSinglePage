@@ -2,15 +2,18 @@
     ViewBag.Title = "Index";
 }
 
-<div data-bind="foreach: ah.model.images" id="list" class="list">
+<!-- ko with: ah.model -->
+<div data-bind="foreach: images" id="list" class="list">
     <img data-bind="attr: { src: Url }, click: $root.highlightImageHandler " />
 </div>
-<!-- ko with: ah.model -->
 <div data-bind="if: displaySelectedImage" class="content">
     <img data-bind="attr: { src: selectedImage.Url }" />
-    <div data-bind="if: displayExif" class="imageInfo">
+    <div class="imageInfo">
         <b>Image Info</b><br>
+        <!-- ko if: displayExif -->
         <div data-bind="html: getExif()"></div>
+        <!-- /ko -->
+        <div data-bind="ifnot: displayExif">Image doesnot have any data</div>
     </div>
     <div>
         User Image Description:
@@ -24,8 +27,8 @@
         </div>
     </div>
 </div>
-<!-- /ko -->
 <div class="footer">
-    <input type="file" id="fileUpload" />
-    <input type="button" id="btnUpload" value="Upload and preview" />
+    <input data-bind="event: { change: () => file = $element.files[0] }" type="file" />
+    <input data-bind="click: uploadImage" type="button" value="Upload and preview" />
 </div>
+<!-- /ko -->

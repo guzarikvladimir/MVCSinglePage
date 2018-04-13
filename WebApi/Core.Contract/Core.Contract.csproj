@@ -43,6 +43,7 @@
     <Compile Include="Contract\IImageModifyingService.cs" />
     <Compile Include="Contract\IImageRetrievingService.cs" />
     <Compile Include="Contract\IImageUpdatingMapper.cs" />
+    <Compile Include="Contract\IEncodedValueParserService.cs" />
     <Compile Include="Models\ExifView.cs" />
     <Compile Include="Models\ImageView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
