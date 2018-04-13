@@ -153,8 +153,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="ImagesLibrary\Image1.jpg" />
-    <Content Include="ImagesLibrary\Image2.jpg" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -167,7 +165,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="ClassDiagram1.cd" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\events.js" />
     <Content Include="scripts\jquery-1.9.1.js" />
@@ -207,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ImagesLibrary\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core.Contract\Core.Contract.csproj">
