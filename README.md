@@ -6,6 +6,7 @@
   <li>Full-size image if it has no information. Requirments look ambiguously in this place. They say that image should be full-size when there is no data and show message 'image does not have any data' at the same time.</li>
   <li>Google map or any other map.</li>
   <li>Razor. As I started with knonkoutJS, with one I ended.</li>
+  <li>Test database and migration (whatever it means).</li>
 </ol>
 <br>
   <h1>Configuring</h1>
